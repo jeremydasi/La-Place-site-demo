@@ -1,0 +1,273 @@
+@import "./styles.global.module.scss";
+
+.ScheduleScreen {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+
+    .left {
+        background: linear-gradient(180deg, #A32633 0%, #702030 100%);
+        height: 100%;
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F9FBFC;
+        height: 100%;
+        width: 100%; 
+
+        .box {
+            width: 800px;
+            height: 1100px;
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: white;
+        
+            .boxLeft {
+                padding: 30px 20px 30px 20px;
+                border-right: 1px solid rgba(26, 26, 26, 0.1);
+
+                h1 {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    letter-spacing: -0.72px;
+                    color: #19202B;
+                }
+
+                .h2 {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 26px;
+                    line-height: 32px;
+                    color: #1A1A1A;
+                }
+
+                .h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: 4;
+                    color: #1A1A1A9C;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+
+                h4 {
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 19px;
+                    color: #0069FF;
+                }
+
+                .containerHours {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 20px;
+                    height: 370px;
+                    width: 100%;
+                    overflow: scroll;
+                    overflow-x: hidden;
+                  
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .containerHour {
+                        border: 1px solid #0069FF80;
+                        border-radius: 4px;
+                        width: 98%;
+                        padding-top: 21px;
+                        padding-bottom: 21px;
+                        display: flex;
+                        justify-content: center;
+                        color: #0069FF;
+                        cursor: pointer;
+
+                        transition: all 0.5s;
+                        &:hover {
+                            color: white;
+                            background-color: #0069FF;
+                        }
+                    }
+
+                    .containerHourSelected {
+                        width: 50%;
+                        background: rgba(0, 105, 255, 0.067);
+
+                        &:hover {
+                            color: #0069FF;
+                            background-color: rgba(0, 105, 255, 0.067);
+                        }
+                    }
+
+                    .containerConfirm {
+                        width: calc(50% - 24px);
+                        color: white;
+                        background-color: #0069FF;
+                        border-radius: 4px;
+                        border: 1px solid #0069FF80;
+                        padding-top: 21px;
+                        padding-bottom: 21px;
+                        display: flex;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.1);
+                        }
+                    }
+
+                    .containerConfirmSelected {
+                        width: 0%;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .boxRight {
+                padding: 30px 20px 30px 20px;
+
+                .h2None {
+                    display: none;
+                }
+
+                .h3None {
+                    display: none;
+                }
+
+                .header {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: 32px;
+                }
+
+                .calendar {
+                    display: grid;
+                    grid-template-columns: 44px 44px 44px 44px 44px 44px 44px;
+                    grid-row-gap: 8px;
+                    grid-column-gap: 8px;
+
+                    .titleDay {
+                        width: 44px;
+                        height: 44px;
+                        justify-content: center;
+                        display: flex;
+                        align-items: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    .number {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: red;
+
+                        background-color: #0069FF11;
+                        color: #0060E6;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        justify-content: center;
+                        display: flex;
+                        align-items: center;
+                        margin-left: auto;
+                        margin-right: auto;
+
+                        cursor: pointer;
+
+                        transition: all 0.5s;
+                    }
+
+                    .cantSelected {
+                        background-color: white;
+                    }
+
+                    .selected {
+                        background-color: #0069FF;
+                        color: white;
+                    }
+                }
+
+                .title {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-top: 30px;
+                    /* identical to box height, or 133% */
+
+                    display: flex;
+                    align-items: center;
+
+                    color: #1A1A1A;
+                }
+                label {
+                    margin-top: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 21px;
+                    /* identical to box height, or 175% */
+
+                    display: flex;
+                    align-items: center;
+
+                    color: #1A1A1A;
+
+                }
+
+                input {
+                    border: 1px solid #B2B2B2;
+                    border-radius: 8px;
+                    height: 46px;
+                    width: 100%;
+                    margin-top: 6px;
+                    margin-bottom: 20px;
+                    padding-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .box {
+        display: flex !important;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .h2None {
+        display: block !important;
+    }
+
+    .h2 {
+        display: none;
+    }
+
+    .h3 {
+        display: none !important;
+    }
+
+    .h3None {
+        display: block !important;
+    }
+
+    .boxLeft {
+        border-right: 0px !important;
+        width: 360px;
+    }
+}

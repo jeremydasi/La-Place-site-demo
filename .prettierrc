@@ -1,0 +1,14 @@
+{
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "printWidth": 180,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.json", ".prettierrc", "*.less", "*.css"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

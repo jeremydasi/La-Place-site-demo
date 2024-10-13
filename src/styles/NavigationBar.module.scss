@@ -1,0 +1,28 @@
+@import "./styles.global.module.scss";
+
+.navigationBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid #E7E7E7;
+
+    .containerLogo {
+        margin-right: 36px;
+    }
+
+    .liens {
+        display: flex;
+        gap: 18px;
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: $text-grey;
+    }
+    
+    .containerButton {
+        margin-left: 111px;
+        margin-bottom: 19px;
+    }
+}

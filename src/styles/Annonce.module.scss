@@ -1,0 +1,12 @@
+@import "./styles.global.module.scss";
+
+.annonceTitle {
+    display: flex;
+    flex-direction: row;
+    color: $text-grey;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 41px;
+    margin-bottom: 22px;
+}
